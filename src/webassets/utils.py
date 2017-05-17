@@ -8,16 +8,16 @@ from itertools import takewhile
 from .exceptions import BundleError
 
 
-__all__ = ('md5_constructor', 'pickle', 'set', 'StringIO',
+__all__ = ('sha256_constructor', 'pickle', 'set', 'StringIO',
            'common_path_prefix', 'working_directory', 'is_url')
 
 
 if sys.version_info >= (2, 5):
     import hashlib
-    md5_constructor = hashlib.md5
-else:
-    import md5
-    md5_constructor = md5.new
+    sha256_constructor = hashlib.sha256
+#else:
+    #import md5
+    #md5_constructor = md5.new
 
 
 try:
