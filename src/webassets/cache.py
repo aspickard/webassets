@@ -21,7 +21,7 @@ import warnings
 from webassets import six
 from webassets.merge import BaseHunk
 from webassets.filter import Filter, freezedicts
-from webassets.utils import md5_constructor, pickle
+from webassets.utils import sha256_constructor, pickle
 import types
 
 
@@ -80,7 +80,7 @@ def make_md5(*data):
             yield str(hash(obj)).encode('utf-8')
         else:
             raise ValueError('Cannot MD5 type %s' % type(obj))
-    md5 = md5_constructor()
+    md5 = sha256_constructor()
     for d in walk(data):
         md5.update(d)
     return md5.hexdigest()

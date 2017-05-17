@@ -9,7 +9,7 @@ import pickle
 from webassets import six
 
 from webassets.merge import FileHunk
-from webassets.utils import md5_constructor, RegistryMetaclass, is_url
+from webassets.utils import sha256_constructor, RegistryMetaclass, is_url
 
 
 __all__ = ('get_versioner', 'VersionIndeterminableError',
@@ -148,7 +148,7 @@ class HashVersion(Version):
         args = [int(length)] if length else []
         return cls(*args)
 
-    def __init__(self, length=8, hash=md5_constructor):
+    def __init__(self, length=8, hash=sha256_constructor):
         self.length = length
         self.hasher = hash
 
