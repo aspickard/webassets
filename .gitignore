@@ -19,6 +19,8 @@
 
 *.~*
 *.pyc
+# vim
+*.un~
 
 /envdev*
 /.virtualenv*
